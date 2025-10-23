@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Internadda</title>
+    <style>
+        /* Basic CSS for a professional look */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            max-width: 550px;
+            width: 100%;
+            border-top: 5px solid #007BFF; /* Blue accent from logo */
+        }
+
+        .logo {
+            width: 120px; /* Logo size */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #007BFF; /* Blue from logo */
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        /* Section for the application number */
+        .app-section {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+
+        .app-section p {
+            margin: 0;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* The random application number */
+        #app-number {
+            font-size: 2.7rem;
+            font-weight: 700;
+            color: #e64a19; /* Orange/Red from logo */
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        /* Section for the motivation quote */
+        .motivation-section {
+            border-top: 1px solid #eee;
+            padding-top: 25px;
+        }
+
+        #motivation-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #444;
+            max-width: 90%;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="logo.jpg" alt="Internadda Logo" class="logo">
+        
+        <h1>Welcome to Internadda</h1>
+        
+        <p class="tagline">Learn - Intern - Earn</p>
+
+        <div class="app-section">
+            <p>Your Application Number is:</p>
+            
+            <h2 id="app-number">...</h2>
+            
+            <p>Please enter this number on the website to continue your exam.</p>
+        </div>
+
+        <div class="motivation-section">
+            <p id="motivation-quote">Loading your daily motivation...</p>
+        </div>
+    </div>
+
+    <script>
+        // --- JavaScript to show random values ---
+
+        // 1. The list of application numbers you provided
+        const appNumbers = [
+            20251011, 20251022, 20251033, 20252041, 20252056, 20252060, 20252071, 20252082, 20252093, 20252104, 
+            20252115, 20252126, 20252137, 20252148, 20252159, 20252170, 20252181, 20252192, 20252203, 20252214, 
+            20252225, 20252236, 20252247, 20252258, 20252269, 20252280, 20252291, 20252302, 20252313, 20252324, 
+            20252335, 20252346, 20252357, 20252368, 20252379, 20252390, 20252401, 20252412, 20252423, 20252434, 
+            20252445, 20252456, 20252467, 20252478, 20252489, 20252500, 20252511, 20252522, 20252533, 20252544, 
+            20252555, 20252566, 20252577, 20252588, 20252599, 20252610, 20252621, 20252632, 20252643, 20252654, 
+            20252665, 20252676, 20252687, 20252698, 20252709, 20252720
+        ];
+
+        // 2. Motivational quotes for your Internadda website
+        const quotes = [
+            "The journey to 'Earn' begins with the courage to 'Learn'.",
+            "Your internship is the bridge between theory and your future career.",
+            "Don't just learn. Absorb. Don't just intern. Perform. Don't just earn. Grow.",
+            "Success is where preparation and opportunity meet. Your opportunity starts now.",
+            "Every skill you learn today is a seed for tomorrow's earnings.",
+            "The future belongs to those who learn more skills and combine them in creative ways.",
+            "An internship is your chance to turn 'I wish I could' into 'I'm glad I did'."
+        ];
+
+        // 3. This function runs when the page finishes loading
+        window.onload = function() {
+            // --- Set random application number ---
+            
+            // Get a random index from the appNumbers array
+            const randomAppIndex = Math.floor(Math.random() * appNumbers.length);
+            // Get the number at that random index
+            const randomAppNumber = appNumbers[randomAppIndex];
+            // Find the HTML element with id="app-number" and put the number inside it
+            document.getElementById('app-number').textContent = randomAppNumber;
+
+            
+            // --- Set random motivational quote ---
+            
+            // Get a random index from the quotes array
+            const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+            // Get the quote at that random index
+            const randomQuote = quotes[randomQuoteIndex];
+            // Find the HTML element with id="motivation-quote" and put the quote inside it
+            document.getElementById('motivation-quote').textContent = `"${randomQuote}"`;
+        };
+    </script>
+
+</body>
+</html>appliction.html
